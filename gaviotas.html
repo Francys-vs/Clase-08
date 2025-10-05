@@ -104,7 +104,6 @@
 
     <script>
 
-
         const grid = document.getElementById('grid');
 
 
@@ -115,10 +114,13 @@
 
                 data.forEach((a)=>{
 
-                    if (a.names.latin.includes("Larus") || a.names.latin.includes("Chroicocephalus") || a.names.latin.includes("Leucophaeus")){
+                    if (a.names.spanish.includes("Gaviot") || a.names.spanish.includes("Gaviota") || a.names.spanish.includes("Gaviotín") || a.names.spanish.includes("Gaviotines")){
+
+                       if (a.names.latin.includes("Larus") || a.names.latin.includes("Chroicocephalus") || a.names.latin.includes("Leucophaeus")){
 
                                grid.innerHTML += `<div class="grid-item"><img src="${a.image.url.replace("http://www.buscaves.cl/","https://buscaves.cl/")}"/><p>${a.names.spanish}</p><small>${a.names.latin}</small></div>`
 
+                       }
                     }
                 })
             }
@@ -127,7 +129,6 @@
             datos("https://raw.githubusercontent.com/NinjasCL/chileanbirds-dataset/refs/heads/master/data/birds.json").catch((error) => console.error(error));
 
         
-
     </script>
 </body>
 </html>
